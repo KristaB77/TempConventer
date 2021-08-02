@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oxi-D1-paI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19129"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TempConverter-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TempConventer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JOY-7N-dDE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <imageReference key="image" image="sun"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ºF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5p-Qa-P9I">
+                                <rect key="frame" x="182.5" y="635" width="49.5" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="e4X-0K-7Ac"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wH9-ea-Zui">
+                                <rect key="frame" x="53" y="403" width="308" height="182"/>
+                                <imageReference key="minimumValueImage" image="sun.min" catalog="system" symbolScale="small"/>
+                                <imageReference key="maximumValueImage" image="sun.max" catalog="system" symbolScale="large"/>
+                                <color key="minimumTrackTintColor" systemColor="labelColor"/>
+                                <color key="thumbTintColor" systemColor="systemTealColor"/>
+                                <connections>
+                                    <action selector="slideValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xsy-Nk-BS4"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UAF-h5-zON">
+                                <rect key="frame" x="75" y="792" width="264" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="0ab-QY-xqW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="tSv-AS-Oyn"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Fahrenheit"/>
+                                    <segment title="Kelvin"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemTealColor"/>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="n98-IR-bpi"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp Converter from ºC to ºF, ºK" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-BK-NuN">
+                                <rect key="frame" x="106" y="197" width="202" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="Xot-CW-WPM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="202" id="rKq-Qo-0sm"/>
+                                    <constraint firstAttribute="width" constant="202" id="vTT-ce-jnC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="108" id="zlw-Ee-rmD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ºC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLi-Fa-pXA">
+                                <rect key="frame" x="136" y="313" width="142" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="142" id="8NJ-wT-Iq9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="142" id="K86-T1-xiM"/>
+                                    <constraint firstAttribute="height" constant="46" id="OAA-bl-k2s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wH9-ea-Zui" firstAttribute="top" secondItem="cLi-Fa-pXA" secondAttribute="bottom" constant="44" id="1mi-G6-LFI"/>
+                            <constraint firstItem="wH9-ea-Zui" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="H8E-GT-hBN"/>
+                            <constraint firstItem="p5p-Qa-P9I" firstAttribute="centerX" secondItem="JOY-7N-dDE" secondAttribute="centerX" id="JkD-Nn-Afc"/>
+                            <constraint firstItem="YE0-BK-NuN" firstAttribute="centerX" secondItem="JOY-7N-dDE" secondAttribute="centerX" id="KWb-Ib-Wr4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JOY-7N-dDE" secondAttribute="bottom" constant="-34" id="LlL-Lb-SCq"/>
+                            <constraint firstItem="cLi-Fa-pXA" firstAttribute="centerX" secondItem="JOY-7N-dDE" secondAttribute="centerX" id="M7p-Oh-cS8"/>
+                            <constraint firstItem="cLi-Fa-pXA" firstAttribute="top" secondItem="YE0-BK-NuN" secondAttribute="bottom" constant="8" symbolic="YES" id="MwJ-wg-ffx"/>
+                            <constraint firstItem="JOY-7N-dDE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-140" id="UR7-5T-Pkg"/>
+                            <constraint firstItem="JOY-7N-dDE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xym-Cc-TNX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UAF-h5-zON" secondAttribute="trailing" id="bf2-Xe-COl"/>
+                            <constraint firstItem="wH9-ea-Zui" firstAttribute="centerX" secondItem="JOY-7N-dDE" secondAttribute="centerX" id="cf0-sC-lUF"/>
+                            <constraint firstItem="YE0-BK-NuN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="cz0-gC-Ojr"/>
+                            <constraint firstItem="UAF-h5-zON" firstAttribute="top" secondItem="p5p-Qa-P9I" secondAttribute="bottom" constant="111" id="d2U-Md-wJu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UAF-h5-zON" secondAttribute="bottom" constant="39" id="fOT-EN-yge"/>
+                            <constraint firstItem="UAF-h5-zON" firstAttribute="centerX" secondItem="JOY-7N-dDE" secondAttribute="centerX" id="fpC-gL-qJc"/>
+                            <constraint firstItem="p5p-Qa-P9I" firstAttribute="top" secondItem="wH9-ea-Zui" secondAttribute="bottom" constant="51" id="uKg-iX-NgA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOY-7N-dDE" secondAttribute="trailing" id="wbx-L8-fod"/>
+                            <constraint firstItem="UAF-h5-zON" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xhJ-or-pbJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TempConverter" id="27v-4D-uko"/>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="cLi-Fa-pXA" id="PG1-oD-U4u"/>
+                        <outlet property="convertedTempLabel" destination="p5p-Qa-P9I" id="9rN-Ic-PlS"/>
+                        <outlet property="tempSegmentControl" destination="UAF-h5-zON" id="zhu-Zf-9EE"/>
+                        <outlet property="tempSlider" destination="wH9-ea-Zui" id="Ot8-82-M0K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767.20000000000005" y="69.715142428785612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S4A-jz-mzZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oxi-D1-paI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="SlZ-tw-hst">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="V2i-HV-A60"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JnQ-kH-de8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="70.614692653673174"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sun" width="375" height="667"/>
+        <image name="sun.max" catalog="system" width="128" height="124"/>
+        <image name="sun.min" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
